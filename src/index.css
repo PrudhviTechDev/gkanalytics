@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #005baa;
+  --secondary-color: #00a0dc;
+  --accent-color: #e8f5fe;
+  --success-color: #0a8754;
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --border-color: #e2e8f0;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: #f8fafc;
+}
+
+.form-header {
+  @apply bg-white p-4 rounded-t-lg shadow-sm border border-gray-200;
+}
+
+.logo-section {
+  @apply border-r pr-4 mr-4;
+}
+
+.form-container {
+  @apply bg-white rounded-lg shadow-xl border border-gray-100;
+}
+
+.input-field {
+  @apply w-full px-3 py-2 border border-gray-200 rounded-md shadow-sm;
+  @apply focus:ring-2 focus:ring-blue-400 focus:border-blue-400 focus:outline-none;
+}
+
+.btn-primary {
+  @apply px-4 py-2 bg-[var(--primary-color)] text-white rounded-lg;
+  @apply hover:bg-[var(--secondary-color)] transition-colors duration-200;
+  @apply flex items-center justify-center gap-2 font-medium;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-gray-50 text-gray-700 rounded-lg border border-gray-200;
+  @apply hover:bg-gray-100 transition-colors duration-200;
+  @apply flex items-center justify-center gap-2 font-medium;
+}
+
+.preview-section {
+  @apply bg-white rounded-lg p-4 border border-gray-200;
+}
+
+.preview-field {
+  @apply bg-white rounded-md p-3 border border-gray-100;
+}
+
+.form-section {
+  @apply border-b border-gray-100 pb-4 mb-4 last:border-b-0 last:mb-0 last:pb-0;
+}
+
+/* Lab Report Header Grid */
+.lab-report-header-grid {
+  @apply grid grid-cols-2 gap-6;
+}
+
+.lab-report-header-grid .field-group {
+  @apply space-y-4;
+}
+
+/* Table Styles */
+.lab-report-table {
+  @apply w-full border-collapse;
+}
+
+.lab-report-table th {
+  @apply px-4 py-2 text-left text-sm font-medium text-gray-700 bg-gray-50;
+}
+
+.lab-report-table td {
+  @apply px-4 py-2 border-b;
+}
+
+.lab-report-table .method-note {
+  @apply text-xs text-gray-500 mt-1;
+}
+
+.lab-report-table .test-group-header {
+  @apply text-sm font-medium text-center bg-gray-50 py-2 border-b;
+}
+
+/* Lab Report Section Headers */
+.lab-report-section-header {
+  @apply text-xl font-bold text-center uppercase tracking-wide text-gray-800 mb-6;
+  @apply w-full border-b border-gray-200 pb-4;
+}
+
+/* Common Field Alignments */
+.field-row {
+  @apply flex items-center gap-4 mb-4;
+}
+
+.field-label {
+  @apply text-sm font-medium text-gray-700 min-w-[120px];
+}
+
+.field-value {
+  @apply flex-1;
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    background: white !important;
+  }
+
+  .lab-report-header-grid {
+    @apply gap-4;
+  }
+
+  .lab-report-table th,
+  .lab-report-table td {
+    @apply text-sm py-1;
+  }
+
+  .method-note {
+    @apply text-xs;
+  }
+}
